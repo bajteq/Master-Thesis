@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <title>Predicted mask</title>
+    <style>
+      .parent {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+
+      .brain-img {
+        position: relative;
+        top: 0;
+        left: 0;
+        border: 1px red solid;
+      }
+
+      .mask-img {
+        position: absolute;
+        border: 1px green solid;
+        filter: hue-rotate(180deg);
+        -webkit-filter: url(#monochrome);
+        filter: url(#monochrome);
+      }
+
+      .defs-only {
+        position: absolute;
+        height: 0;
+        width: 0;
+        overflow: none;
+        left: -100%;
+      }
+    </style>
+    <title>lol</title>
+  </head>
+  <body>
+    <h1>Predicted mask for brain tumor</h1>
+
+
+    <img
+      src="{{url_for('static', filename=user_image)}}"
+      width="250"
+      height="250"
+    />
+    <img
+      src="{{url_for('static', filename='generated_mask1.png')}}"
+      width="250"
+      height="250"
+    />
+
+    <!-- <img
+      src="{{url_for('static', filename='generated_mask2.png')}}"
+      width="250"
+      height="250"
+    /> -->
+    <img
+      src="{{url_for('static', filename='blended_image1.png')}}"
+      width="250"
+      height="250"
+    />
+    <!-- <img
+      src="{{url_for('static', filename='blended_image2.png')}}"
+      width="250"
+      height="250"
+    /> -->
+
+    <form method="get" action="{{url_for('index')}}">
+      <button> Back to Home </button>
+      </form>
+  </body>
+</html>
